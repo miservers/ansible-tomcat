@@ -1,6 +1,7 @@
 ---
 # defaults file for tomcat-ansible-role
 
+tomcat_state: present
 
 tomcat_version: 8.5.42
 
