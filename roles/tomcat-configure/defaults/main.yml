@@ -8,6 +8,8 @@ tomcat_version: 8.5.42
 tomcat_user: tomcat
 tomcat_group: tomcat
 
+tomcat_java_home: /usr/lib/jvm/jre
+
 tomcat_install_path: /opt
 tomcat_service_name: tomcat
 tomcat_systemd_config_path: /etc/systemd/system
