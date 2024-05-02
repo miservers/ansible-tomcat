@@ -6,9 +6,9 @@
     path: "{{ tomcat_install_path }}/apache-tomcat-{{ tomcat_version }}"
   register: tomcat_installed
 
-- name: Stop Here is tomcat is not installated
+- name: Stop Here if tomcat is not installed
   fail: 
-    msg: Tomcat not installed!
+    msg: Tomcat has not been installed!
   when: not tomcat_installed.stat.exists 
 
 - name: Setup server.xml

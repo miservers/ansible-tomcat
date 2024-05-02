@@ -1,0 +1,10 @@
+---
+- name:                    Tomcat - Uninstall
+  hosts:                   tomcat_servers
+  become:                  true
+  vars:
+    tomcat_version: 8.5.23
+        
+  roles:
+    - roles/tomcat-uninstall
+
