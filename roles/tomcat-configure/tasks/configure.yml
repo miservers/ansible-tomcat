@@ -1,6 +1,14 @@
 ---
 # tasks file for tomcat-ansible-role
 
+- name: Check if tomcat is installed
+  stat:
+    path: "{{ tomcat_install_path }}/apache-tomcat-{{ tomcat_version }}"
+  register: tomcat_installed
+
+- name: Stop Here is tomcat is not installated
+  fail_when: not tomcat_installed.stat.exists 
+
 - name: Setup server.xml
   template:
     src: "{{ tomcat_template_server }}"
