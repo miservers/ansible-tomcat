@@ -7,7 +7,9 @@
   register: tomcat_installed
 
 - name: Stop Here is tomcat is not installated
-  fail_when: not tomcat_installed.stat.exists 
+  fail: 
+    msg: Tomcat not installed!
+  when: not tomcat_installed.stat.exists 
 
 - name: Setup server.xml
   template:
